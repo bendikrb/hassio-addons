@@ -5,51 +5,82 @@
   "description": "Snapcast server",
   "startup": "system",
   "boot": "auto",
-  "map": ["share:rw"],
-  "options": { 
+  "map": [
+    "share:rw"
+  ],
+  "options": {
     "stream": {
-        "streams": ["pipe:///share/snapfifo/librespot?name=SpotifyConnect&sampleformat=44100:16:2", "pipe:///share/snapfifo/mopidy?name=Mopidy&sampleformat=44100:16:2"],
-        "buffer": "1000",
-        "codec": "flac",
-        "send_to_muted": "false",
-        "sampleformat": "48000:16:2"
-        },
+      "streams": [
+        "pipe:///share/snapfifo/librespot?name=SpotifyConnect&sampleformat=44100:16:2",
+        "pipe:///share/snapfifo/mopidy?name=Mopidy&sampleformat=44100:16:2"
+      ],
+      "buffer": 1000,
+      "codec": "flac",
+      "send_to_muted": false,
+      "sampleformat": "48000:16:2",
+      "bind_to_addres": "0.0.0.0",
+      "port": 1704
+    },
     "http": {
-        "enabled": "true",
-        "doc_root": " "
-        },
+      "enabled": true,
+      "doc_root": "/share/snapcast",
+      "port": 1780,
+      "bind_to_address": "0.0.0.0"
+    },
     "tcp": {
-        "enabled": "true"
-        },
+      "enabled": true,
+      "port": 1705,
+      "bind_to_address": "0.0.0.0"
+    },
     "logging": {
-        "enabled": "true"
-        },
+      "enabled": true,
+      "debug": false
+    },
     "server": {
-        "threads": "-1"
-        }
+      "threads": -1
+    }
   },
   "schema": {
     "stream": {
-        "streams": ["str"],
-        "buffer": "int",
-        "codec": "str",
-        "send_to_muted": "str",
-        "sampleformat": "str"
-        },
+      "streams": [
+        "str"
+      ],
+      "buffer": "int?",
+      "codec": "str?",
+      "send_to_muted": "bool?",
+      "sampleformat": "str?",
+      "bind_to_addres": "str?",
+      "port": "int?"
+    },
     "http": {
-        "enabled": "str",
-        "doc_root": "str"
-        },
+      "enabled": "bool?",
+      "doc_root": "str?",
+      "port": "int?",
+      "bind_to_address": "str?"
+    },
     "tcp": {
-        "enabled": "str"
-        },
+      "enabled": "bool?",
+      "port": "int?",
+      "bind_to_address": "str?"
+    },
     "logging": {
-        "enabled": "str"
-        },
+      "enabled": "bool?",
+      "debug": "bool?"
+    },
     "server": {
-        "threads": "int"
-        }
-   },
-  "ports": {"1704/tcp": 1704, "1705/tcp": 1705, "1780/tcp": 1780},
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"]
-  }
+      "threads": "int"
+    }
+  },
+  "ports": {
+    "1704/tcp": 1704,
+    "1705/tcp": 1705,
+    "1780/tcp": 1780
+  },
+  "arch": [
+    "armhf",
+    "armv7",
+    "aarch64",
+    "amd64",
+    "i386"
+  ]
+}
