@@ -3,6 +3,7 @@
   "version": "latest",
   "slug": "snapcastserver",
   "description": "Snapcast server",
+  "url": "https://github.com/bendikrb/hassio-addons/tree/master/snapserver",
   "startup": "system",
   "boot": "auto",
   "map": [
@@ -18,7 +19,7 @@
       "codec": "flac",
       "send_to_muted": false,
       "sampleformat": "48000:16:2",
-      "bind_to_addres": "0.0.0.0",
+      "bind_to_address": "0.0.0.0",
       "port": 1704
     },
     "http": {
@@ -49,7 +50,7 @@
       "codec": "str?",
       "send_to_muted": "bool?",
       "sampleformat": "str?",
-      "bind_to_addres": "str?",
+      "bind_to_address": "str?",
       "port": "int?"
     },
     "http": {
