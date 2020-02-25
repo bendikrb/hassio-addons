@@ -1,6 +1,6 @@
 {
   "name": "snapcast-server",
-  "version": "latest",
+  "version": "0.1b0",
   "slug": "snapcastserver",
   "description": "Snapcast server",
   "url": "https://github.com/bendikrb/hassio-addons/tree/master/snapserver",
@@ -65,7 +65,6 @@
       "bind_to_address": "str?"
     },
     "logging": {
-      "enabled": "bool?",
       "debug": "bool?"
     },
     "server": {

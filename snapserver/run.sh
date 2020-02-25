@@ -35,7 +35,6 @@ echo "port = $(bashio::config 'tcp.port')" >> "${config}"
 echo "bind_to_address = $(bashio::config 'tcp.bind_to_address')" >> "${config}"
 
 echo "[logging]" >> "${config}"
-echo "enabled = $(bashio::config 'logging.enabled')" >> "${config}"
 echo "debug = $(bashio::config 'logging.debug')" >> "${config}"
 
 echo "[server]" >> "${config}"
@@ -43,4 +42,4 @@ echo "threads = $(bashio::config 'server.threads')" >> "${config}"
 
 bashio::log.info "Starting SnapServer..."
 
-/usr/bin/snapserver -c /etc/snapserver.conf
+/usr/bin/snapserver -c /etc/snapserver.conf --user snapcast:snapcast
