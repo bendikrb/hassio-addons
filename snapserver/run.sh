@@ -25,7 +25,7 @@ echo "port = $(bashio::config 'stream.port')" >> "${config}"
 
 echo "[http]" >> "${config}"
 echo "enabled = $(bashio::config 'http.enabled')" >> "${config}"
-echo "doc_root = $(bashio::config 'http.docroot')" >> "${config}"
+echo "doc_root = $(bashio::config 'http.doc_root')" >> "${config}"
 echo "port = $(bashio::config 'http.port')" >> "${config}"
 echo "bind_to_address = $(bashio::config 'http.bind_to_address')" >> "${config}"
 
